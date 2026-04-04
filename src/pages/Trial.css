@@ -1,0 +1,116 @@
+/* Responsive Google Form Container */
+.google-form-container {
+  max-width: 800px;
+  width: 100%;
+}
+
+.iframe-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: white;
+  padding: 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--pk-border);
+}
+
+/* Standard responsive iframe with tightened height to remove gaps */
+.native-iframe {
+  width: 100%;
+  display: block;
+  border: none;
+  height: 2150px; /* Sweet spot for Desktop */
+}
+
+@media (max-width: 768px) {
+  .native-iframe {
+    height: 2250px; /* Sweet spot for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .native-iframe {
+    height: 2350px; /* Sweet spot for mobile */
+  }
+}
+
+/* Promotional Cards Styling matching screenshot shapes and layout */
+.promo-sections {
+  margin-top: 5rem;
+}
+
+.promo-card {
+  position: relative;
+}
+
+.promo-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  aspect-ratio: 4/3;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* Decorative Shapes - Abstracted to use our brand colors */
+.shape {
+  position: absolute;
+  border-radius: var(--radius-2xl);
+  z-index: 1;
+}
+
+/* Card 1 specific shapes */
+.right-image .shape-purple {
+  width: 110%;
+  height: 110%;
+  bottom: -20px;
+  left: -20px;
+  border-radius: var(--radius-xl);
+}
+
+.right-image .shape-green {
+  width: 80px;
+  height: 140px;
+  top: -30px;
+  right: 20px;
+  border-radius: 40px;
+}
+
+.right-image .shape-blue {
+  width: 120px;
+  height: 60px;
+  bottom: 40px;
+  left: -40px;
+  border-radius: 30px;
+}
+
+/* Card 2 specific shapes */
+.left-image .shape-blue-large {
+  width: 115%;
+  height: 115%;
+  top: -15px;
+  left: -15px;
+  border-radius: var(--radius-xl);
+}
+
+.left-image .shape-green-top {
+  width: 160px;
+  height: 80px;
+  top: -25px;
+  right: 40px;
+  border-radius: 40px;
+}
+
+.left-image .shape-purple-bottom {
+  width: 120px;
+  height: 120px;
+  bottom: -30px;
+  left: -30px;
+  border-radius: var(--radius-xl);
+}

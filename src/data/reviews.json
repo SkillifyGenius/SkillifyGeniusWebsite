@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah T.",
+    "role": "Parent",
+    "text": "My 8-year-old loves the classes! The instructors are patient, and the platform makes it so easy for kids to learn at their own pace. Highly recommended.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Jason M.",
+    "role": "Parent",
+    "text": "We were unsure where to start, but the evaluation quiz put my son in the perfect beginner program. He's building a calculator in Python now!",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Emma L.",
+    "role": "Student, 12",
+    "text": "The teachers make coding fun, not like regular homework. I've already made 3 games by myself.",
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "David W.",
+    "role": "Parent",
+    "text": "The custom learning plan was exactly what my daughter needed. She used to get frustrated with math, but now she applies logic effortlessly through coding.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Priya K.",
+    "role": "Parent",
+    "text": "I love the milestone tracking. I get regular updates on exactly what he's building and how his autonomous problem-solving is improving.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "name": "Michael R.",
+    "role": "Student, 15",
+    "text": "The AI workflows we learned were mind-blowing. I'm building automated scripts for my other homework now!",
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "name": "Jenny L.",
+    "role": "Parent",
+    "text": "The 1-on-1 pacing is incredible. They really take the time to find out what interests the child and build projects around that.",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "Marcus B.",
+    "role": "Student, 11",
+    "text": "Best class ever. I don't feel like I'm studying. I'm just making cool apps and games.",
+    "rating": 5
+  }
+]
