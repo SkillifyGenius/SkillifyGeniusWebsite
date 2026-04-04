@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ message: "Server configuration missing" });
     }
 
-    const filePath = 'src/Data/contact/messages.json';
+    const filePath = 'src/data/contact/messages.json';
     const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
 
     // 1. Fetch the current file from GitHub
