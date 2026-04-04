@@ -1,5 +1,17 @@
 [
   {
+    "id": 4,
+    "title": "My Test Post",
+    "date": "Mar 26, 1977",
+    "preview": "Commodo cum magnam a",
+    "author": "Sed doloremque ipsum",
+    "readTime": "Inventore minus anim",
+    "content": [
+      "Blanditiis assumenda"
+    ],
+    "isPremium": false
+  },
+  {
     "id": 1,
     "title": "Why Kids Should Learn to Code Early",
     "date": "Oct 12, 2026",
