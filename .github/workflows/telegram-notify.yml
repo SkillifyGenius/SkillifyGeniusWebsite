@@ -1,0 +1,45 @@
+name: Notify Telegram on Contact Submission
+
+on:
+  push:
+    paths:
+      - 'src/Data/contact/messages.json'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Latest Message
+        id: parse_message
+        run: |
+          # Read the last object in the JSON array
+          LATEST_MESSAGE=$(jq '.[-1]' src/Data/contact/messages.json)
+          
+          # Extract fields
+          FNAME=$(echo "$LATEST_MESSAGE" | jq -r '."First Name" // "N/A"')
+          LNAME=$(echo "$LATEST_MESSAGE" | jq -r '."Last Name" // "N/A"')
+          NAME="$FNAME $LNAME"
+          EMAIL=$(echo "$LATEST_MESSAGE" | jq -r '."Email" // "N/A"')
+          PHONE=$(echo "$LATEST_MESSAGE" | jq -r '."Phone Number" // "N/A"')
+          TOPIC=$(echo "$LATEST_MESSAGE" | jq -r '."Topic" // "N/A"')
+          MESSAGE=$(echo "$LATEST_MESSAGE" | jq -r '."Message" // "N/A"')
+
+          # Format the Telegram text
+          TEXT="*New Contact Form Submission*%0A"
+          TEXT="${TEXT}*Name:* ${NAME}%0A"
+          TEXT="${TEXT}*Email:* ${EMAIL}%0A"
+          TEXT="${TEXT}*Phone:* ${PHONE}%0A"
+          TEXT="${TEXT}*Topic:* ${TOPIC}%0A"
+          TEXT="${TEXT}*Message:* ${MESSAGE}"
+
+          echo "payload=$TEXT" >> $GITHUB_OUTPUT
+
+      - name: Send Message to Telegram
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d "parse_mode=Markdown" \
+            -d "text=${{ steps.parse_message.outputs.payload }}"
