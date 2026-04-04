@@ -27,7 +27,8 @@ const Contact = () => {
         setStatus('Message sent successfully!');
         e.target.reset();
       } else {
-        setStatus('Failed to send message. Please try again.');
+        const errorData = await response.json().catch(() => ({}));
+        setStatus(`Failed to send message: ${errorData.message || response.statusText}`);
       }
     } catch (error) {
       console.error(error);
