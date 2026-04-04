@@ -1,0 +1,15 @@
+.faq-page .max-w-3xl {
+  max-width: 48rem;
+}
+
+.faq-page .rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.faq-page .p-8 {
+  padding: 2rem;
+}
+
+.faq-page .border-color {
+  border-color: var(--pk-border);
+}

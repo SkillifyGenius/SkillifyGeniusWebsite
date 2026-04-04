@@ -1,0 +1,126 @@
+.footer {
+  background-color: var(--pk-bg-card);
+  padding-top: 4rem;
+  border-top: 1px solid var(--pk-border);
+  color: var(--pk-text-main);
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--pk-primary);
+  margin-bottom: 1rem;
+}
+
+.footer-desc {
+  color: var(--pk-text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--pk-bg-base);
+  color: var(--pk-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+  background-color: var(--pk-primary);
+  color: white;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: var(--pk-secondary);
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--pk-text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--pk-primary);
+  padding-left: 4px;
+}
+
+.footer-contact p {
+  color: var(--pk-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.footer-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.footer-bottom {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--pk-border);
+  text-align: center;
+  color: var(--pk-text-muted);
+  font-size: 0.875rem;
+}
+
+.footer-credit {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.heart-icon {
+  color: var(--pk-accent);
+}
+
+@keyframes pulseHeart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.animate-pulse {
+  animation: pulseHeart 1.5s infinite;
+}

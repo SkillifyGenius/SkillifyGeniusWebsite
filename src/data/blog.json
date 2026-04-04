@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Why Kids Should Learn to Code Early",
+    "date": "Oct 12, 2026",
+    "preview": "Discover how early exposure to coding inherently boosts critical thinking and logical problem-solving in children.",
+    "author": "Skillify Editors",
+    "readTime": "5 min read",
+    "content": [
+      "In today's continuously evolving digital economy, understanding the foundational mechanics behind software isn't just about becoming a developer—it is about critical analytical thinking.",
+      "As kids learn to decompose massive problems into small logic loops, they apply the exact same behavioral patterns toward learning languages, mathematics, and complex sciences.",
+      "Our introductory courses focus explicitly on 'Algorithmic Thinking' through visual aids before jumping right into heavy syntax."
+    ],
+    "isPremium": false
+  },
+  {
+    "id": 2,
+    "title": "A Parent's Guide to Screen Time",
+    "date": "Sep 25, 2026",
+    "preview": "How to balance educational interaction and recreational device usage to help kids thrive dynamically.",
+    "author": "Dr. Miller",
+    "readTime": "4 min read",
+    "content": [
+      "Screen time isn't inherently malicious—it's categorized heavily by passive vs active usage. The true risk of tablet overconsumption stems from infinite, frictionless scrolling loops.",
+      "By placing children into controlled, creative spaces (like Scratch projects or Code.org puzzles), they transform their relationship with their iPad from a consumption device into a building engine.",
+      "We recommend setting aside specific 'Creation Blocks' of 45-minutes for children to explore rather than blindly consuming content."
+    ],
+    "isPremium": false
+  },
+  {
+    "id": 3,
+    "title": "Python vs Scratch: What is Best?",
+    "date": "Sep 10, 2026",
+    "preview": "Comparing block-based mechanics with text logic: How beginners can transition securely and safely.",
+    "author": "Skillify Tech Team",
+    "readTime": "7 min read",
+    "content": [
+      "Premium Content: Full article access regarding detailed comparison charts and K12 benchmarking standards is currently unavailable. Please securely book a free trial to speak with an educational counselor."
+    ],
+    "isPremium": true
+  }
+]

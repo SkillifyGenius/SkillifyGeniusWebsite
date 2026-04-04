@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "headline": "Build Unbreakable Problem-Solving & Self-Learning Skills",
+    "subHeadline": "Move beyond passive screen time. We equip the next generation with the ultimate competitive advantage: the ability to leverage AI workflows, build complex logic, and master autonomous creation from day one.",
+    "primaryCTA": "Book a Free Trial",
+    "secondaryCTA": "Start the Pathfinder"
+  },
+  "trust": {
+    "text": "Trusted by over 500+ parents. Loved by students.",
+    "stats": [
+      { "label": "Active Learners", "value": "10k+" },
+      { "label": "Projects Built", "value": "5k+" },
+      { "label": "Satisfaction Rate", "value": "4.9/5" }
+    ]
+  },
+  "path": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Assess Skills",
+        "description": "Take a 5-minute interactive quiz to pinpoint the perfect starting level for your child."
+      },
+      {
+        "id": 2,
+        "title": "Customized Learning Plan",
+        "description": "Receive a hyper-personalized curriculum designed specifically around their unique abilities, pace, and future goals."
+      },
+      {
+        "id": 3,
+        "title": "Guided Practice",
+        "description": "Join live sessions with expert educators and practice with real-world projects."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "100% Customized Learning Experiences",
+    "list": [
+      "Hyper-personalized curriculums tailored to their current skill levels",
+      "Dynamic pacing that automatically adapts to your child's learning speed",
+      "Custom project assignments based on individual interests and strengths",
+      "1-on-1 milestone tracking with personalized feedback loops",
+      "Adaptive problem-solving challenges that scale as they grow",
+      "Flexible formats blending live guidance with autonomous self-learning"
+    ]
+  },
+  "highlights": {
+    "title": "What will you get in the live course?",
+    "features": [
+      {
+        "title": "Class Recordings",
+        "desc": "Access high-quality recordings anytime for revision or makeup."
+      },
+      {
+        "title": "Post-Session Support",
+        "desc": "Dedicated instructor channels to ask questions securely."
+      },
+      {
+        "title": "Progress Checks",
+        "desc": "Regular updates on milestone achievements directly to parents."
+      },
+      {
+        "title": "Projects & Activities",
+        "desc": "Hands-on coding challenges to solidify concepts."
+      },
+      {
+        "title": "Structured Guidance",
+        "desc": "Every lesson is mapped intentionally to build up seamlessly."
+      },
+      {
+        "title": "Beginner-Friendly",
+        "desc": "No prior experience required; we start from zero."
+      }
+    ]
+  },
+  "quickSkill": [
+    {
+      "id": 1,
+      "title": "Short on time?",
+      "subtitle": "Learn a highly sought-after technical skill within exactly an hour.",
+      "ctaText": "Browse 1-Hour Courses",
+      "type": "primary"
+    },
+    {
+      "id": 2,
+      "title": "Not sure where to start?",
+      "subtitle": "Take our interactive pathfinder quiz to discover their optimal trajectory.",
+      "ctaText": "Take the Quiz",
+      "type": "secondary"
+    }
+  ],
+  "finalCta": {
+    "title": "Ready to ignite their passion for technology?",
+    "subtitle": "Join thousands of parents investing in their child's digital literacy today. Schedule a free 1-on-1 assessment and experience our guided learning framework.",
+    "ctaText": "Claim Your Free Trial Session"
+  }
+}
