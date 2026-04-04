@@ -3,7 +3,7 @@ name: Notify Telegram on Contact Submission
 on:
   push:
     paths:
-      - 'src/Data/contact/messages.json'
+      - 'src/data/contact/messages.json'
 
 jobs:
   notify:
@@ -16,7 +16,7 @@ jobs:
         id: parse_message
         run: |
           # Read the last object in the JSON array
-          LATEST_MESSAGE=$(jq '.[-1]' src/Data/contact/messages.json)
+          LATEST_MESSAGE=$(jq '.[-1]' src/data/contact/messages.json)
           
           # Extract fields
           FNAME=$(echo "$LATEST_MESSAGE" | jq -r '."First Name" // "N/A"')
