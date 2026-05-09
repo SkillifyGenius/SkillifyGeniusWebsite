@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, ArrowRight, Activity, Calendar } from 'lucide-react';
+import { Clock, ArrowRight, Calendar, Target, Layers, Trophy } from 'lucide-react';
 import Modal from './Modal';
 import './CourseCard.css';
 
@@ -17,7 +17,7 @@ const CourseCard = ({ course }) => {
       
       <div className="course-content">
         <div className="course-meta">
-          <span className="course-age">{course.ageGroup}</span>
+          <span className="course-phase">{course.phase || course.ageGroup}</span>
           <span className="course-duration">
             <Clock size={16} />
             {course.duration}
@@ -26,6 +26,12 @@ const CourseCard = ({ course }) => {
         
         <h3 className="course-title">{course.title}</h3>
         <p className="course-desc">{course.description}</p>
+        {course.primaryOutcome && (
+          <div className="course-outcome">
+            <Trophy size={16} />
+            <span>{course.primaryOutcome}</span>
+          </div>
+        )}
         
         <button className="btn btn-outline course-btn" onClick={() => setIsModalOpen(true)}>
           View Details
@@ -35,45 +41,84 @@ const CourseCard = ({ course }) => {
     </div>
 
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-      <div className="modal-header">
-        <h2 className="modal-title">{course.title}</h2>
-        <div className="modal-meta mt-2 mb-4">
-          <span className="course-age">{course.ageGroup}</span>
-          <span className="course-level text-primary bg-light-green px-2 py-1 rounded-md text-sm">{course.level}</span>
-        </div>
-      </div>
-      
-      <img src={course.image} alt={course.title} style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1.5rem' }} />
-      
-      <div className="modal-body">
-        <h4 className="font-bold mb-2">Course Overview</h4>
-        <p>{course.overview || course.description}</p>
-        
-        <div className="grid grid-cols-2 gap-4 mt-6">
-          <div className="flex items-center gap-2 text-muted">
-            <Clock className="text-primary" size={20} />
-            <div>
-              <div className="font-semibold text-main">Duration</div>
-              <span>{course.duration}</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 text-muted">
-            <Calendar className="text-primary" size={20} />
-            <div>
-              <div className="font-semibold text-main">Sessions</div>
-              <span>{course.sessions || 'Live Classes'}</span>
-            </div>
+      <div className="course-modal">
+        <div className="course-modal-hero">
+          <img src={course.image} alt={course.title} />
+          <div className="course-modal-hero-overlay">
+            <span>{course.phase}</span>
+            <h2>{course.title}</h2>
           </div>
         </div>
-      </div>
 
-      <div className="flex gap-4 mt-8 pt-6 border-t border-color" style={{ borderTop: '1px solid var(--pk-border)' }}>
-        <Link to="/trial" className="btn btn-primary flex-grow">
-          Book Free Trial
-        </Link>
-        <button className="btn btn-outline flex-grow" onClick={() => setIsModalOpen(false)}>
-          Close
-        </button>
+        <div className="course-modal-body">
+          <div className="course-modal-tags">
+            <span>{course.ageGroup}</span>
+            <span>{course.level}</span>
+          </div>
+
+          <section className="course-modal-overview">
+            <h3>Course Overview</h3>
+            <p>{course.overview || course.description}</p>
+          </section>
+          
+          <div className="course-stat-grid">
+            <div className="course-stat">
+              <Clock className="text-primary" size={22} />
+              <div>
+                <strong>Duration</strong>
+                <span>{course.duration}</span>
+              </div>
+            </div>
+            <div className="course-stat">
+              <Calendar className="text-primary" size={22} />
+              <div>
+                <strong>Class Frequency</strong>
+                <span>{course.classFrequency || course.sessions || 'Live Classes'}</span>
+              </div>
+            </div>
+          </div>
+
+          {(course.goal || course.modules || course.primaryOutcome) && (
+            <div className="course-detail-list">
+              {course.goal && (
+                <div className="course-detail-item">
+                  <Target className="text-primary" size={20} />
+                  <div>
+                    <strong>Goal</strong>
+                    <p>{course.goal}</p>
+                  </div>
+                </div>
+              )}
+              {course.modules && (
+                <div className="course-detail-item">
+                  <Layers className="text-primary" size={20} />
+                  <div>
+                    <strong>Modules</strong>
+                    <p>{course.modules}</p>
+                  </div>
+                </div>
+              )}
+              {course.primaryOutcome && (
+                <div className="course-detail-item">
+                  <Trophy className="text-primary" size={20} />
+                  <div>
+                    <strong>Primary Outcome</strong>
+                    <p>{course.primaryOutcome}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="course-modal-actions">
+          <Link to="/trial" className="btn btn-primary flex-grow">
+            Book Free Trial
+          </Link>
+          <button className="btn btn-outline flex-grow" onClick={() => setIsModalOpen(false)}>
+            Close
+          </button>
+        </div>
       </div>
     </Modal>
     </>

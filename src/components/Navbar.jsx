@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -14,10 +14,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  const closeMobileMenu = () => setIsOpen(false);
 
   return (
     <nav className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
@@ -49,12 +46,12 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="mobile-menu">
-          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-          <Link to="/courses" className={location.pathname === '/courses' ? 'active' : ''}>Courses</Link>
-          <Link to="/resources" className={location.pathname === '/resources' ? 'active' : ''}>Resources</Link>
-          <Link to="/faq" className={location.pathname === '/faq' ? 'active' : ''}>FAQ</Link>
-          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
-          <Link to="/trial" className="btn btn-primary mobile-btn">Book a Trial</Link>
+          <Link to="/" onClick={closeMobileMenu} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+          <Link to="/courses" onClick={closeMobileMenu} className={location.pathname === '/courses' ? 'active' : ''}>Courses</Link>
+          <Link to="/resources" onClick={closeMobileMenu} className={location.pathname === '/resources' ? 'active' : ''}>Resources</Link>
+          <Link to="/faq" onClick={closeMobileMenu} className={location.pathname === '/faq' ? 'active' : ''}>FAQ</Link>
+          <Link to="/contact" onClick={closeMobileMenu} className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
+          <Link to="/trial" onClick={closeMobileMenu} className="btn btn-primary mobile-btn">Book a Trial</Link>
         </div>
       )}
     </nav>

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "enabled": true,
+    "eyebrow": "Limited Time Offer",
+    "title": "Book a free trial and get a personalized learning roadmap",
+    "description": "Start with a live assessment session and receive a clear course recommendation for your child.",
+    "ctaText": "Claim Free Trial",
+    "ctaLink": "/trial",
+    "note": "No commitment required"
+  }
+]

@@ -1,17 +1,5 @@
 [
   {
-    "id": 4,
-    "title": "My Test Post",
-    "date": "Mar 26, 1977",
-    "preview": "Commodo cum magnam a",
-    "author": "Sed doloremque ipsum",
-    "readTime": "Inventore minus anim",
-    "content": [
-      "Blanditiis assumenda"
-    ],
-    "isPremium": false
-  },
-  {
     "id": 1,
     "title": "Why Kids Should Learn to Code Early",
     "date": "Oct 12, 2026",
@@ -50,5 +38,70 @@
       "Premium Content: Full article access regarding detailed comparison charts and K12 benchmarking standards is currently unavailable. Please securely book a free trial to speak with an educational counselor."
     ],
     "isPremium": true
+  },
+  {
+    "id": 4,
+    "title": "The Future of AI in K-12 Education",
+    "date": "Aug 22, 2026",
+    "preview": "Explaining how Artificial Intelligence tutors can individualize learning paths while maintaining human oversight.",
+    "author": "Dr. Sarah Lin",
+    "readTime": "6 min read",
+    "content": [
+      "AI is rapidly evolving from a tech novelty to an indispensable classroom assistant.",
+      "By analyzing student progression and micro-interactions, AI systems can adapt the difficulty of programming challenges in real-time."
+    ],
+    "isPremium": false
+  },
+  {
+    "id": 5,
+    "title": "Top 5 Mistakes when Teaching Kids to Code",
+    "date": "Aug 05, 2026",
+    "preview": "Avoid these common pitfalls to ensure your child remains enthusiastic and motivated about learning technology.",
+    "author": "Skillify Editors",
+    "readTime": "4 min read",
+    "content": [
+      "The biggest mistake is forcing syntax over computational thinking.",
+      "Kids should feel like they are building magic, not studying for a math test. Let them break things, fail safely, and rebuild."
+    ],
+    "isPremium": false
+  },
+  {
+    "id": 6,
+    "title": "Why Robotics Helps Concrete Learning",
+    "date": "Jul 18, 2026",
+    "preview": "Bridging the gap between screen-based code and physical world physics using simple educational robotics kits.",
+    "author": "Tech Educator John",
+    "readTime": "8 min read",
+    "content": [
+      "Translating code into physical movement yields immediate intrinsic rewards for students.",
+      "Whether it's a moving car or a blinking LED, tangible validation reinforces theoretical loops and conditionals."
+    ],
+    "isPremium": false
+  },
+  {
+    "id": 7,
+    "title": "Preparing for the Tech Jobs of 2035",
+    "date": "Jul 02, 2026",
+    "preview": "What skills will actually matter a decade from now? We analyze industry trends to future-proof your child.",
+    "author": "Skillify Editors",
+    "readTime": "5 min read",
+    "content": [
+      "While specific languages will phase out, algorithms and human-centered design principles will remain permanent.",
+      "The jobs of 2035 will require high EQ, systemic thinking, and fluid adaptability."
+    ],
+    "isPremium": true
+  },
+  {
+    "id": 8,
+    "title": "Unplugged Coding: Learning Without Computers",
+    "date": "Jun 15, 2026",
+    "preview": "Fun and interactive games to teach programming fundamentals using just paper, cups, and teamwork.",
+    "author": "Dr. Miller",
+    "readTime": "3 min read",
+    "content": [
+      "You don't need electricity to learn code. Designing a 'sandwich-making algorithm' step-by-step is an excellent primer.",
+      "We share our favorite board games and tabletop activities that build logical reasoning offline."
+    ],
+    "isPremium": false
   }
 ]
