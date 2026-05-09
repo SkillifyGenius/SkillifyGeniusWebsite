@@ -5,12 +5,14 @@ import siteData from '../data/siteContent.json';
 import coursesData from '../data/courses.json';
 import reviewsData from '../data/reviews.json';
 import blogData from '../data/blog.json';
+import offerBannerData from '../data/offerBanner.json';
 import CourseCard from '../components/CourseCard';
 import Modal from '../components/Modal';
 import './Home.css';
 
 const Home = () => {
   const { hero, trust, path, benefits, highlights, quickSkill, finalCta } = siteData;
+  const activeOffer = offerBannerData.find((offer) => offer.enabled);
   const [activeBlog, setActiveBlog] = useState(null);
 
   return (
@@ -65,6 +67,30 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {activeOffer && (
+        <section className="offer-banner-section">
+          <div className="container">
+            <div className="offer-banner">
+              <div className="offer-banner-icon">
+                <Zap size={26} />
+              </div>
+              <div className="offer-banner-content">
+                <span>{activeOffer.eyebrow}</span>
+                <h2>{activeOffer.title}</h2>
+                <p>{activeOffer.description}</p>
+              </div>
+              <div className="offer-banner-action">
+                {activeOffer.note && <small>{activeOffer.note}</small>}
+                <Link to={activeOffer.ctaLink || '/trial'} className="btn btn-primary">
+                  {activeOffer.ctaText || 'Claim Offer'}
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 3. Path / How It Works */}
       <section className="pathway bg-white section-padding">
@@ -189,15 +215,23 @@ const Home = () => {
       {/* 9. From Our Blog */}
       <section className="home-blog section-padding bg-base">
         <div className="container">
-          <h2 className="section-title text-center mb-10">From Our Blog</h2>
+          <div className="flex justify-between items-center max-w-5xl mx-auto" style={{ marginBottom: '3rem' }}>
+            <h2 className="section-title text-left m-0">From Our Blog</h2>
+            {blogData.length > 6 && (
+              <Link to="/resources" className="text-primary font-semibold flex items-center gap-2 hover:underline">
+                View All <ArrowRight size={16} />
+              </Link>
+            )}
+          </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {blogData.slice(0, 4).map((post, idx) => {
-              const borderColors = ['#f43f5e', '#8b5cf6', '#16a34a', '#f43f5e'];
-              const Icons = [GraduationCap, Award, Book, MonitorPlay];
+            {blogData.slice(0, 6).map((post, idx) => {
+              const borderColors = ['#f43f5e', '#8b5cf6', '#16a34a', '#f97316', '#3b82f6', '#ec4899'];
+              const Icons = [GraduationCap, Award, Book, MonitorPlay, Zap, Star];
               const IconComp = Icons[idx % Icons.length];
+              const color = borderColors[idx % borderColors.length];
               return (
-                <div key={post.id} className="blog-preview-card card flex items-center gap-6 text-left" style={{ borderTop: `4px solid ${borderColors[idx % 4]}`}}>
-                  <div className="blog-preview-icon flex-shrink-0 flex items-center justify-center rounded-full shadow-md" style={{ backgroundColor: borderColors[idx % 4], width: '60px', height: '60px' }}>
+                <div key={post.id} className="blog-preview-card card flex items-center gap-6 text-left" style={{ borderTop: `4px solid ${color}`}}>
+                  <div className="blog-preview-icon flex-shrink-0 flex items-center justify-center rounded-full shadow-md" style={{ backgroundColor: color, width: '60px', height: '60px' }}>
                     <IconComp size={28} color="#ffffff" />
                   </div>
                   <div className="blog-preview-content flex flex-col justify-center">

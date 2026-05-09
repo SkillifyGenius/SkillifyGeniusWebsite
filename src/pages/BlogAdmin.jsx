@@ -11,7 +11,7 @@ const API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/content
 const base64ToUtf8 = (base64) => {
   try {
     return new TextDecoder().decode(Uint8Array.from(window.atob(base64), c => c.charCodeAt(0)));
-  } catch (e) {
+  } catch {
     return decodeURIComponent(escape(window.atob(base64)));
   }
 };
@@ -19,7 +19,7 @@ const base64ToUtf8 = (base64) => {
 const utf8ToBase64 = (str) => {
   try {
     return window.btoa(String.fromCharCode(...new TextEncoder().encode(str)));
-  } catch (e) {
+  } catch {
     return window.btoa(unescape(encodeURIComponent(str)));
   }
 };
