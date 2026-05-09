@@ -9,7 +9,8 @@
     "sessions": "12 Live Interactive Sessions",
     "image": "/images/course_scratch_3d.png",
     "category": "Basic",
-    "overview": "A perfect starting point for future innovators. We build 5 AI-assisted apps while introducing core concepts like natural language processing, effective prompting, and AI tool orchestration."
+    "overview": "A perfect starting point for future innovators. We build 5 AI-assisted apps while introducing core concepts like natural language processing, effective prompting, and AI tool orchestration.",
+    "phase": "01"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "sessions": "16 Guided Pair-Programming Sessions",
     "image": "/images/promo_1_3d.png",
     "category": "Intermediate",
-    "overview": "Transition natively from traditional coding to AI-driven generation. We cover context-window management, architecture prompting, and iterative debugging to build fully functional software through natural language."
+    "overview": "Transition natively from traditional coding to AI-driven generation. We cover context-window management, architecture prompting, and iterative debugging to build fully functional software through natural language.",
+    "phase": "02"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "sessions": "24 Project-based Sessions",
     "image": "/images/course_web_3d.png",
     "category": "Advanced",
-    "overview": "Master the absolute basics of no-code automation and API wrappers using modern browser technologies. Everything culminates in students deploying their own fully automated AI content or operational system."
+    "overview": "Master the absolute basics of no-code automation and API wrappers using modern browser technologies. Everything culminates in students deploying their own fully automated AI content or operational system.",
+    "phase": "03"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "sessions": "8 Simulation Workshop Sessions",
     "image": "/images/promo_2_3d.png",
     "category": "Basic",
-    "overview": "Before touching physical boards or infrastructure, simulate intelligent apps using robust foundational models. We build products featuring vision, voice, and RAG architectures in an entirely cloud-native ecosystem."
+    "overview": "Before touching physical boards or infrastructure, simulate intelligent apps using robust foundational models. We build products featuring vision, voice, and RAG architectures in an entirely cloud-native ecosystem.",
+    "phase": "04"
   },
   {
     "id": 5,
@@ -57,6 +61,7 @@
     "sessions": "Self-learning paths",
     "image": "/images/course_foundation_3d.png",
     "category": "Basic",
-    "overview": "Designed for maximum autonomy, this course lets you grasp core computer science logic precisely at your own speed using interactive, foundational puzzles."
+    "overview": "Designed for maximum autonomy, this course lets you grasp core computer science logic precisely at your own speed using interactive, foundational puzzles.",
+    "phase": "05"
   }
 ]
