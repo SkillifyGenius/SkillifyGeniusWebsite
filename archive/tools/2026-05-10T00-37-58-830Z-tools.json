@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "Scratch Foundation",
+    "type": "Block Editor",
+    "description": "Visual programming environment designed explicitly for children.",
+    "link": "https://scratch.mit.edu",
+    "reasons": [
+      "Highly resilient drag-and-drop mechanism eliminates traditional syntax errors.",
+      "Vibrant visual ecosystem immediately captures younger audiences' attention.",
+      "Enables deploying complete, playable browser games in under an hour."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Replit Educate",
+    "type": "Online IDE",
+    "description": "A collaborative browser-based IDE for Python and HTML development.",
+    "link": "https://replit.com",
+    "reasons": [
+      "Zero installation or hardware requirements—it runs cleanly fully in the browser.",
+      "Multiplayer live-editing makes it fundamentally easy for instructors to guide students natively.",
+      "Fast compilation speeds suitable for K12 learners starting Python.",
+      "Effective"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Code.org",
+    "type": "Learning Platform",
+    "description": "Interactive, globally recognized foundational computer science modules.",
+    "link": "https://code.org",
+    "reasons": [
+      "Leverages universally loved pop-culture characters (Minecraft, Star Wars) for maximum engagement.",
+      "Provides structured short-burst challenges that encourage algorithmic thinking.",
+      "Highly respected framework endorsed by leading tech giants globally."
+    ]
+  }
+]
