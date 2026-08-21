@@ -3,7 +3,7 @@ name: Notify Telegram on Contact Submission
 on:
   push:
     paths:
-      - 'src/Data/contact/messages.json'
+      - '**/messages.json'
 
 jobs:
   notify:
@@ -16,7 +16,7 @@ jobs:
         id: parse_message
         run: |
           # Read the last object in the JSON array
-          LATEST_MESSAGE=$(jq '.[-1]' src/Data/contact/messages.json)
+          LATEST_MESSAGE=$(jq '.[-1]' src/data/contact/messages.json)
           
           # Extract fields
           FNAME=$(echo "$LATEST_MESSAGE" | jq -r '."First Name" // "N/A"')
@@ -39,7 +39,7 @@ jobs:
 
       - name: Send Message to Telegram
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+          curl -i -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
             -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
             -d "parse_mode=Markdown" \
             -d "text=${{ steps.parse_message.outputs.payload }}"
