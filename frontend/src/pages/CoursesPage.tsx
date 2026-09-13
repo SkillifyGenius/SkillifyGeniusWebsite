@@ -27,7 +27,7 @@ export function CoursesPage() {
               badge: course.level,
               isPopular: false,
               highlightText: "Customized 1:1 Pathway",
-              gradientHeader: "from-emerald-800 to-[#0d2922]",
+              gradientHeader: "from-[#0b3328] via-[#0f4436] to-[#062019]",
               borderClass: "border-emerald-950/10",
               badgeClass: "bg-emerald-50 text-emerald-800",
               accentColor: "text-emerald-700",
@@ -45,6 +45,7 @@ export function CoursesPage() {
               >
                 {/* Visual Left Column with Themed Gradient & 3D Art */}
                 <div className={`relative flex min-h-72 flex-col justify-between overflow-hidden bg-gradient-to-br ${meta.gradientHeader} p-7 sm:p-8 text-white`}>
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.12),transparent_70%)] pointer-events-none" />
                   <div className="relative z-10">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">

@@ -500,7 +500,7 @@ export function HomePage() {
                 badge: course.level,
                 isPopular: false,
                 highlightText: "Customized 1:1 Pathway",
-                gradientHeader: "from-emerald-600 to-teal-700",
+                gradientHeader: "from-[#0b3328] via-[#0f4436] to-[#062019]",
                 borderClass: "border-emerald-950/10",
                 badgeClass: "bg-emerald-50 text-emerald-800",
                 image: "/images/hero_3d.png",
@@ -521,7 +521,8 @@ export function HomePage() {
                 >
                   {/* Visual 3D Hero Art Banner */}
                   <div className={`relative h-52 w-full overflow-hidden bg-gradient-to-br ${meta.gradientHeader} p-4 flex items-center justify-center`}>
-                    <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.14),transparent_70%)]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
 
                     <img
                       src={meta.image}
