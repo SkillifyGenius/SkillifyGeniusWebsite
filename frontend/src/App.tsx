@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContactWidget } from "@/components/shared/FloatingContactWidget";
+import { ScrollToTopButton } from "@/components/shared/ScrollToTopButton";
 import { HomePage } from "@/pages/HomePage";
 import { CoursesPage } from "@/pages/CoursesPage";
 import { BlogPage } from "@/pages/BlogPage";
@@ -46,6 +47,7 @@ export function App() {
         </Routes>
       </main>
       <FloatingContactWidget />
+      <ScrollToTopButton />
       <Footer />
     </div>
   );

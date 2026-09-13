@@ -34,7 +34,18 @@ export function Footer() {
           <div className="mt-5 flex flex-wrap gap-4 text-xs text-emerald-100/50"><Link to="/privacy">Privacy Policy</Link><Link to="/safeguarding">Safeguarding</Link><Link to="/terms">Terms of Service</Link></div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-emerald-100/45">© {new Date().getFullYear()} Skillify Genius. Built for curious minds.</div>
+      <div className="border-t border-white/10 px-5 py-5 text-xs text-emerald-100/50">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 sm:flex-row sm:px-3">
+          <div>© {new Date().getFullYear()} Skillify Genius. Built for curious minds.</div>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex items-center gap-1 font-medium text-emerald-200/70 transition-colors hover:text-white"
+          >
+            Back to top ↑
+          </button>
+        </div>
+      </div>
     </footer>
   );
 }

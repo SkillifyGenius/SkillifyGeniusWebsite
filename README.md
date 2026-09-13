@@ -77,6 +77,7 @@ The existing backend directory remains available for future use but is not part 
 
 ## Documentation
 
+- [`docs/CHANGELOG.md`](docs/CHANGELOG.md): release history, features, and platform updates
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): frontend-to-Appwrite submission flow
 - [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md): approved positioning, educator facts, and CTA language
 - [`docs/APPWRITE_SETUP.md`](docs/APPWRITE_SETUP.md): collections, permissions, and Telegram Function
