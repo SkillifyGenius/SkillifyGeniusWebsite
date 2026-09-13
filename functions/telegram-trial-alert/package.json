@@ -1,0 +1,8 @@
+{
+  "name": "telegram-trial-alert",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

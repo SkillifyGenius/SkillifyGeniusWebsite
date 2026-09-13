@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 30% 94%;
+    --foreground: 164 45% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 164 45% 11%;
+    --primary: 160 83% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 151 45% 94%;
+    --secondary-foreground: 160 83% 23%;
+    --muted: 150 12% 96%;
+    --muted-foreground: 151 12% 37%;
+    --border: 151 24% 87%;
+    --input: 151 24% 87%;
+    --ring: 160 83% 23%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-w-0 bg-background font-sans text-foreground antialiased selection:bg-emerald-100 selection:text-emerald-950;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-[#102a25];
+  }
+
+  p {
+    @apply text-[#597068];
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-xl border border-white/60 shadow-lg shadow-emerald-950/5;
+  }
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-emerald-950/10 shadow-md transition-all duration-300;
+  }
+  .glass-card-hover {
+    @apply hover:-translate-y-1 hover:shadow-card-hover hover:border-emerald-700/30;
+  }
+  .ambient-glow {
+    @apply relative after:absolute after:-inset-px after:rounded-[inherit] after:bg-gradient-to-r after:from-emerald-500/20 after:to-amber-500/20 after:-z-10 after:blur-sm;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
