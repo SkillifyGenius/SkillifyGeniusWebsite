@@ -14,7 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2026-09-13
 
 ### Added
-- **"Go to TOP" Floating Button**: Introduced floating `<ScrollToTopButton />` component (`frontend/src/components/shared/ScrollToTopButton.tsx`) that automatically appears after scrolling down 350px. Uses smooth window scroll physics and is anchored to the bottom-left (`bottom-6 left-6 z-40`) to prevent collisions with the bottom-right floating contact widget.
+- **"Go to TOP" Circular Scroll Progress Button**: Introduced floating `<ScrollToTopButton />` component (`frontend/src/components/shared/ScrollToTopButton.tsx`) that appears promptly after scrolling 120px. Features a textless sign-only design with an up arrow symbol and an animated SVG circular progress ring that fills clockwise proportionally to page scroll percentage. Anchored cleanly on the bottom-right above the contact widget (`bottom-[5.25rem] right-6 z-30`).
+- **Brand Logo Scroll to Home Top**: Configured the Skillify Genius brand logo link in both the header (`Navbar.tsx`) and footer (`Footer.tsx`) to scroll smoothly to the top of the home page when clicked, even when already on the home route.
 - **Footer Back to Top Action**: Added a semantic "Back to top ↑" action in the footer bottom bar (`frontend/src/components/layout/Footer.tsx`).
 - **Bangladesh Time (BST) Alert Conversion**: Upgraded the Telegram alert Appwrite Function (`functions/telegram-trial-alert/src/main.js`) with an automatic time conversion utility (`formatBdTime()`). In addition to the parent's requested slot and timezone, the Telegram notification displays `BD Time: <formatted>` (`Asia/Dhaka`, UTC+6) for instant educator scheduling without manual timezone math.
 - **Platform Changelog**: Added `docs/CHANGELOG.md` to track all releases, enhancements, and architectural fixes.

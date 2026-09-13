@@ -7,7 +7,11 @@ export function Footer() {
     <footer className="bg-[#0d2922] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3 font-display font-black text-xl">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex items-center gap-3 font-display font-black text-xl"
+          >
             <span className="grid h-10 w-10 place-items-center rounded-2xl bg-emerald-400 text-emerald-950 shadow-md shadow-emerald-950/20"><BookOpen className="h-5 w-5" /></span>
             Skillify Genius
           </Link>

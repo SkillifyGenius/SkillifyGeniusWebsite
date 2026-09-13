@@ -22,7 +22,10 @@ export function Navbar() {
         <Link
           to="/"
           className="group flex items-center gap-3"
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            setOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           aria-label="Skillify Genius home"
         >
           <span className="relative grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-md shadow-emerald-950/20 group-hover:scale-105 transition-transform">
