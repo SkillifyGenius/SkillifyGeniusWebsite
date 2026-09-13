@@ -1,9 +1,11 @@
 import { fallbackCourses, fallbackPosts } from "@/data/content";
 import type { BlogPost, Course, CourseRegistration, LeadInquiry, ParentReview, TrialBooking } from "@/types";
 
-const endpoint = import.meta.env.VITE_APPWRITE_ENDPOINT?.replace(/\/+$/, "");
-const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID;
-const databaseId = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+const endpoint = (import.meta.env.VITE_APPWRITE_ENDPOINT || "https://api.attanjil.com/v1").replace(/\/+$/, "");
+const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID || "6aa5f4880020ee2b7f5b";
+const rawDb = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+// Map the display name "skillify_genius_db" to the actual Appwrite database ID "6aa5fbd8001e67a857e3"
+const databaseId = (!rawDb || rawDb === "skillify_genius_db") ? "6aa5fbd8001e67a857e3" : rawDb;
 
 function newDocumentId(): string {
   const bytes = crypto.getRandomValues(new Uint8Array(16));
@@ -14,14 +16,15 @@ function newDocumentId(): string {
 }
 
 async function createDocument<T extends { id: string }>(collectionId: string | undefined, data: T): Promise<T> {
-  if (!endpoint || !projectId || !databaseId || !collectionId) {
+  const targetCollection = collectionId || "trial_bookings";
+  if (!endpoint || !projectId || !databaseId || !targetCollection) {
     throw new Error("The submission service is not configured yet. Please contact the educator directly.");
   }
 
   let response: Response;
   try {
     response = await fetch(
-      `${endpoint}/databases/${encodeURIComponent(databaseId)}/collections/${encodeURIComponent(collectionId)}/documents`,
+      `${endpoint}/databases/${encodeURIComponent(databaseId)}/collections/${encodeURIComponent(targetCollection)}/documents`,
       {
         method: "POST",
         headers: {
@@ -36,6 +39,8 @@ async function createDocument<T extends { id: string }>(collectionId: string | u
   }
 
   if (!response.ok) {
+    const errorBody = await response.text().catch(() => "");
+    console.error(`[Appwrite submission error] Status ${response.status}:`, errorBody);
     throw new Error("Your request could not be saved. Please try again or contact the educator directly.");
   }
 

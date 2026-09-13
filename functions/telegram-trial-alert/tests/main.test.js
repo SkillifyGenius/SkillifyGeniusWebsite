@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import handler from "../src/main.js";
+import handler, { formatBdTime } from "../src/main.js";
 
 const booking = {
   $id: "booking-123",
@@ -13,8 +13,8 @@ const booking = {
   email: "parent@example.com",
   courseSlug: "coding-creative-logic",
   preferredDate: "2026-10-01",
-  preferredTime: "Evening: 6-7 PM",
-  timezone: "Asia/Dhaka",
+  preferredTime: "10:00 AM - 12:00 PM",
+  timezone: "UTC",
   message: "Private notes",
 };
 
@@ -28,7 +28,7 @@ const context = (body = booking, event = "databases.skillify_genius_db.collectio
   error: () => {},
 });
 
-test("sends a minimal Telegram group alert for a new trial booking", async (t) => {
+test("sends a minimal Telegram group alert for a new trial booking with BD time", async (t) => {
   const previousFetch = globalThis.fetch;
   const previousEnv = {
     TRIAL_DATABASE_ID: process.env.TRIAL_DATABASE_ID,
@@ -59,7 +59,19 @@ test("sends a minimal Telegram group alert for a new trial booking", async (t) =
   assert.equal(sent.chat_id, "-1001234567890");
   assert.match(sent.text, /Parent Name/);
   assert.match(sent.text, /booking-123/);
+  assert.match(sent.text, /BD Time: 4:00 PM - 6:00 PM BD/);
   assert.doesNotMatch(sent.text, /Private Student|Private notes/);
+});
+
+test("formatBdTime converts UTC time to Bangladesh Time (+6)", () => {
+  assert.equal(formatBdTime("2026-09-20", "10:00 AM - 12:00 PM", "UTC"), "4:00 PM - 6:00 PM BD");
+});
+
+test("formatBdTime extracts existing BD label from slot string", () => {
+  assert.equal(
+    formatBdTime("2026-09-20", "Morning: 9:00 AM - 11:00 AM (7:00 PM - 9:00 PM BD)", "America/New_York"),
+    "7:00 PM - 9:00 PM BD"
+  );
 });
 
 test("ignores unrelated collection events", async () => {
