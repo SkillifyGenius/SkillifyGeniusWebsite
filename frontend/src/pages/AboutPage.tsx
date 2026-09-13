@@ -22,7 +22,7 @@ import { Button } from "@/components/ui/button";
 const credentials = [
   { icon: CalendarDays, value: "2012", label: "Teaching since" },
   { icon: Award, value: "2014", label: "National Award Recipient" },
-  { icon: Globe2, value: "20+", label: "Countries taught" },
+  { icon: Globe2, value: "21+", label: "Countries taught" },
   { icon: UserRoundCheck, value: "1:1", label: "Customized mentorship" },
 ];
 
@@ -70,7 +70,7 @@ export function AboutPage() {
     <>
       <Seo
         title="About the Educator & Academic Lead | Skillify Genius"
-        description="Meet the software engineer and educator guiding personalized 1:1 technology learning across 20+ countries since 2012."
+        description="Meet the software engineer and educator guiding personalized 1:1 technology learning across 21+ countries since 2012."
       />
 
       {/* HERO SECTION */}
@@ -115,7 +115,7 @@ export function AboutPage() {
               </div>
               <div className="my-8 h-px bg-white/10" />
               <p className="leading-7 text-emerald-100/75 text-sm sm:text-base">
-                Senior Coding Instructor across international platforms, guiding learners from 20+ countries through personalized mentorship.
+                Senior Coding Instructor across international platforms, guiding learners from 21+ countries through personalized mentorship.
               </p>
               <div className="mt-8 flex items-center gap-2 text-sm font-bold text-emerald-300">
                 <Radio className="h-4 w-4" /> Actively teaching and building
@@ -226,7 +226,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* GLOBAL PEDAGOGY ACROSS 20+ COUNTRIES */}
+      {/* GLOBAL PEDAGOGY ACROSS 21+ COUNTRIES */}
       <section className="bg-white px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
@@ -234,7 +234,7 @@ export function AboutPage() {
               <Globe2 className="h-3.5 w-3.5 text-emerald-700" /> Global Perspective
             </span>
             <h2 className="mt-4 font-display text-3xl font-black sm:text-4xl lg:text-5xl text-[#102a25]">
-              Guiding learners across 20+ countries and curricula.
+              Guiding learners across 21+ countries and curricula.
             </h2>
             <p className="mt-5 text-base leading-8 text-[#597068] sm:text-lg">
               Because 1:1 mentorship is bespoke, our teaching adapts seamlessly to support students following premier international curricula.

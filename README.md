@@ -21,7 +21,7 @@ Submission flow: `browser → React frontend → Appwrite collection`. New trial
 
 ## Product positioning
 
-Skillify Genius focuses on customized 1:1 mentorship in problem solving, self-learning, and digital safety. The public educator profile presents the approved facts documented in [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md), including teaching since 2012, a 2014 National Award, experience with learners from 20+ countries, and active work as a Senior Coding Instructor, Software Engineer, and Educator.
+Skillify Genius focuses on customized 1:1 mentorship in problem solving, self-learning, and digital safety. The public educator profile presents the approved facts documented in [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md), including teaching since 2012, a 2014 National Award, experience with learners from 21+ countries, and active work as a Senior Coding Instructor, Software Engineer, and Educator.
 
 The primary conversion flow is a free, no-obligation, live 1:1 assessment at `/trial`.
 
@@ -62,9 +62,9 @@ Frontend:
 ```text
 Build command: npm install && npm run build
 Publish directory: dist
-VITE_APPWRITE_ENDPOINT=https://your-appwrite-host/v1
-VITE_APPWRITE_PROJECT_ID=your_project_id
-VITE_APPWRITE_DATABASE_ID=skillify_genius_db
+VITE_APPWRITE_ENDPOINT=https://api.attanjil.com/v1
+VITE_APPWRITE_PROJECT_ID=6aa5f4880020ee2b7f5b
+VITE_APPWRITE_DATABASE_ID=6aa5fbd8001e67a857e3
 VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID=course_registrations
 VITE_APPWRITE_LEADS_COLLECTION_ID=leads
 VITE_APPWRITE_TRIALS_COLLECTION_ID=trial_bookings

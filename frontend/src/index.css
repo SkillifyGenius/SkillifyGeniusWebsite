@@ -36,11 +36,16 @@
   h2,
   h3,
   h4 {
-    @apply font-display tracking-tight text-[#102a25];
+    @apply font-display tracking-tight;
+    color: inherit;
   }
 
   p {
     @apply text-[#597068];
+  }
+
+  :where(.text-white, [class*="text-white"], [class*="bg-slate-900"], [class*="bg-[#0d2922]"]) :where(h1, h2, h3, h4, p) {
+    color: inherit;
   }
 
   a,

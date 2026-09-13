@@ -22,7 +22,7 @@ Use “personalized mentorship” and “customized live 1:1” as supporting la
 - Senior Coding Instructor across international platforms
 - Teaching since 2012
 - 2014 National Award Recipient
-- Has guided learners from 20+ countries through personalized mentorship
+- Has guided learners from 21+ countries through personalized mentorship
 - A lifelong self-learner who continues to build and learn in production
 - Actively teaching and building
 

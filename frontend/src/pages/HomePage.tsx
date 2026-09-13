@@ -309,7 +309,7 @@ export function HomePage() {
             </div>
             <div className="my-8 h-px bg-white/10" />
             <p className="leading-7 text-emerald-100/70">
-              Senior Coding Instructor across international platforms, guiding learners from 20+ countries through personalized mentorship.
+              Senior Coding Instructor across international platforms, guiding learners from 21+ countries through personalized mentorship.
             </p>
             <div className="mt-auto flex items-center gap-2 pt-10 text-sm font-bold text-emerald-300">
               <span className="h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_5px_rgba(110,231,183,.1)]" />
@@ -324,7 +324,7 @@ export function HomePage() {
               Learn from someone who continues to build and learn in production, not someone who only recites textbook theory.
             </p>
             <div className="mt-8 grid grid-cols-2 overflow-hidden rounded-3xl border bg-[#f7faf7] sm:grid-cols-4">
-              {[['2012', 'Teaching since'], ['2014', 'National Award Recipient'], ['20+', 'Countries taught'], ['1:1', 'Customized mentorship']].map(([value, label]) => (
+              {[['2012', 'Teaching since'], ['2014', 'National Award Recipient'], ['21+', 'Countries taught'], ['1:1', 'Customized mentorship']].map(([value, label]) => (
                 <div key={value} className="border-b border-r p-5 last:border-r-0 sm:border-b-0">
                   <p className="text-2xl font-black text-emerald-700">{value}</p>
                   <p className="mt-2 text-xs font-semibold leading-5">{label}</p>

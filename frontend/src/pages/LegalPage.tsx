@@ -288,7 +288,7 @@ function SafeguardingContent() {
             <HeartHandshake className="h-4 w-4" />
             See It For Yourself
           </span>
-          <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold font-display">
+          <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold font-display text-white">
             Attend a Free 45-Minute Diagnostic Session with Your Child
           </h3>
           <p className="mt-2 text-sm sm:text-base text-slate-300 leading-relaxed">

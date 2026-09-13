@@ -7,9 +7,9 @@ Deploy the `frontend` directory to any static host.
 ```text
 Build: npm install && npm run build
 Publish: dist
-Environment: VITE_APPWRITE_ENDPOINT=https://your-appwrite-host/v1
-Environment: VITE_APPWRITE_PROJECT_ID=your_project_id
-Environment: VITE_APPWRITE_DATABASE_ID=skillify_genius_db
+Environment: VITE_APPWRITE_ENDPOINT=https://api.attanjil.com/v1
+Environment: VITE_APPWRITE_PROJECT_ID=6aa5f4880020ee2b7f5b
+Environment: VITE_APPWRITE_DATABASE_ID=6aa5fbd8001e67a857e3
 Environment: VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID=course_registrations
 Environment: VITE_APPWRITE_LEADS_COLLECTION_ID=leads
 Environment: VITE_APPWRITE_TRIALS_COLLECTION_ID=trial_bookings
@@ -34,9 +34,9 @@ Set the Telegram token and chat ID in Appwrite Function settings, not in the sta
 Public frontend values:
 
 ```text
-VITE_APPWRITE_ENDPOINT=https://your-appwrite-host/v1
-VITE_APPWRITE_PROJECT_ID=your_project_id
-VITE_APPWRITE_DATABASE_ID=skillify_genius_db
+VITE_APPWRITE_ENDPOINT=https://api.attanjil.com/v1
+VITE_APPWRITE_PROJECT_ID=6aa5f4880020ee2b7f5b
+VITE_APPWRITE_DATABASE_ID=6aa5fbd8001e67a857e3
 VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID=course_registrations
 VITE_APPWRITE_LEADS_COLLECTION_ID=leads
 VITE_APPWRITE_TRIALS_COLLECTION_ID=trial_bookings
