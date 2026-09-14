@@ -1,6 +1,6 @@
 # Architecture
 
-Skillify Genius currently deploys as a static React frontend backed by self-hosted Appwrite. The Express backend directory remains in the repository for possible future use but is not part of the current deployment.
+Skillify Genius deploys as a Next.js App Router frontend backed by self-hosted Appwrite. The Express backend remains optional legacy code and is not part of the frontend deployment.
 
 Browser → React frontend → Appwrite submission collections
                          └→ new trial booking event → Appwrite Function → Telegram Bot API → educator chat
@@ -11,23 +11,28 @@ The frontend holds only public Appwrite endpoint, project ID, database ID, and c
 
 | Path | Purpose |
 | --- | --- |
-| `/` | Educator profile, course content, registration |
-| `/trial` | Free 1:1 assessment request |
-| `/courses` | Course pathways |
+| `/` | Original course overview, pathway diagnostic, and registration |
+| `/courses` | Original course list and trial links |
+| `/blog` | Original resource cards and article reader modal |
+| `/trial` | Original free 1:1 trial request with course preselection |
+| `/mentorship` | Additional mentorship overview |
+| `/programs` | Foundation, Professional, and Mastery mentorship details |
+| `/assessment` | Pre-enrollment personalization questionnaire |
+| `/journey` | Session-only personal roadmap and progress draft; no account or mentor sync |
 | `/about` | Educator profile |
-| `/blog` | Educational resources |
+| `/blog/[slug]` | Additional indexable article pages |
 | `/contact` | General inquiry |
 | `/privacy`, `/safeguarding`, `/terms` | Public policy pages |
 
-Course and article content is stored in typed frontend arrays. Reviews are currently empty. Vite builds a static SPA; the host must rewrite unknown routes to `index.html`.
+Program and article content is stored in typed frontend arrays. Next.js prerenders public static routes and articles with route-level titles, canonicals, Open Graph metadata, sitemap, and robots.txt. The personal journey draft is stored in browser session storage, so it does not create a student account or expose draft data to the server.
 
 ## Submission persistence
 
 | Flow | Appwrite collection | Frontend environment variable |
 | --- | --- | --- |
-| Course registration | `course_registrations` | `VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID` |
-| Contact inquiry | `leads` | `VITE_APPWRITE_LEADS_COLLECTION_ID` |
-| 1:1 assessment | `trial_bookings` | `VITE_APPWRITE_TRIALS_COLLECTION_ID` |
+| Course registration | `course_registrations` | `NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID` |
+| Contact inquiry | `leads` | `NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID` |
+| Live 1:1 assessment request | `trial_bookings` | `NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID` |
 
 The frontend uses Appwrite's document-create REST endpoint. Each document has the same generated UUID in its `id` attribute and Appwrite document ID. Collection schemas validate fields. The three collections grant public create permission only; public users cannot read, update, or delete submissions.
 

@@ -2,25 +2,25 @@
 
 The frontend writes directly to Appwrite. Create one database and three collections in the self-hosted Appwrite project.
 
-In project `6aa5f4880020ee2b7f5b`, the database named `skillify_genius_db` has ID `6aa5fbd8001e67a857e3`. Use that **ID**, rather than the display name, for `VITE_APPWRITE_DATABASE_ID`. Inside it, create a collection with the exact ID `trial_bookings`, or set `VITE_APPWRITE_TRIALS_COLLECTION_ID` to its actual ID. The database and collection names can differ from their IDs. Add the attributes listed below and grant collection-level `Create` to `Any`.
+In project `6aa5f4880020ee2b7f5b`, the database named `skillify_genius_db` has ID `6aa5fbd8001e67a857e3`. Use that **ID**, rather than the display name, for `NEXT_PUBLIC_APPWRITE_DATABASE_ID`. Inside it, create a collection with the exact ID `trial_bookings`, or set `NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID` to its actual ID. The database and collection names can differ from their IDs. Add the attributes listed below and grant collection-level `Create` to `Any`.
 
 Set the Function variables `TRIAL_DATABASE_ID=6aa5fbd8001e67a857e3` and `TRIAL_COLLECTION_ID=trial_bookings` (or its actual ID). The Function's deployment ID and URL are not database or collection IDs.
 
-To set up the three collections and Telegram Function automatically, create an API key in this project with `databases.read`, `databases.write`, `functions.read`, and `functions.write` scopes. Save it as `APPWRITE_API_KEY=...` in the ignored `scripts/.env` file, then run `node scripts/setup-appwrite.mjs` from the repository root. The script reads the IDs in `frontend/.env`, creates any missing collection attributes, grants only public Create permission, sets the Function's event and database variables, and redeploys it if its settings changed. If the project has multiple Functions, set `APPWRITE_TRIAL_FUNCTION_ID` in `scripts/.env` as well. Never put the API key in `frontend/.env` or any `VITE_` variable.
+To set up the three collections and Telegram Function automatically, create an API key in this project with `databases.read`, `databases.write`, `functions.read`, and `functions.write` scopes. Save it as `APPWRITE_API_KEY=...` in the ignored `scripts/.env` file, then run `node scripts/setup-appwrite.mjs` from the repository root. The script reads the IDs in `frontend/.env`, creates any missing collection attributes, grants only public Create permission, sets the Function's event and database variables, and redeploys it if its settings changed. If the project has multiple Functions, set `APPWRITE_TRIAL_FUNCTION_ID` in `scripts/.env` as well. Never put the API key in `frontend/.env` or any `NEXT_PUBLIC_` variable.
 
 ## Frontend environment mapping
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_APPWRITE_ENDPOINT` | HTTPS Appwrite API endpoint ending in `/v1` |
-| `VITE_APPWRITE_PROJECT_ID` | Public Appwrite project ID |
-| `VITE_APPWRITE_PROJECT_NAME` | Optional display label; not used for API requests |
-| `VITE_APPWRITE_DATABASE_ID` | Database containing the three collections |
-| `VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID` | Course registration collection |
-| `VITE_APPWRITE_LEADS_COLLECTION_ID` | Contact inquiry collection |
-| `VITE_APPWRITE_TRIALS_COLLECTION_ID` | 1:1 assessment collection |
+| `NEXT_PUBLIC_APPWRITE_ENDPOINT` | HTTPS Appwrite API endpoint ending in `/v1` |
+| `NEXT_PUBLIC_APPWRITE_PROJECT_ID` | Public Appwrite project ID |
+| `NEXT_PUBLIC_APPWRITE_PROJECT_NAME` | Optional display label; not used for API requests |
+| `NEXT_PUBLIC_APPWRITE_DATABASE_ID` | Database containing the three collections |
+| `NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID` | Course registration collection |
+| `NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID` | Contact inquiry collection |
+| `NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID` | 1:1 assessment collection |
 
-Add the local and production frontend origins as Web platforms in the Appwrite Console so browser requests pass CORS. Do not put an Appwrite API key or Telegram bot token in any `VITE_` variable.
+Add the local and production frontend origins as Web platforms in the Appwrite Console so browser requests pass CORS. Do not put an Appwrite API key or Telegram bot token in any `NEXT_PUBLIC_` variable.
 
 ## Collection permissions
 
@@ -92,4 +92,4 @@ For self-hosted Appwrite, ensure a Node.js function runtime is enabled and the F
 
 ## Troubleshooting a 404 on trial submission
 
-If the browser's document-create request returns `database_not_found`, the value of `VITE_APPWRITE_DATABASE_ID` does not exist in the selected Appwrite project. Confirm the project ID and copy the exact database ID from the Console. If the response is `collection_not_found`, check `VITE_APPWRITE_TRIALS_COLLECTION_ID` inside that database. Restart the local Vite server after changing `frontend/.env`, or rebuild and redeploy the hosted frontend. A successful document save is required before the Telegram Function can run.
+If the browser's document-create request returns `database_not_found`, the value of `NEXT_PUBLIC_APPWRITE_DATABASE_ID` does not exist in the selected Appwrite project. Confirm the project ID and copy the exact database ID from the Console. If the response is `collection_not_found`, check `NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID` inside that database. Restart the local Next.js server after changing `frontend/.env`, or rebuild and redeploy the hosted frontend. A successful document save is required before the Telegram Function can run.

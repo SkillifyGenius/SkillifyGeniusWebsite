@@ -1,2 +1,3 @@
 @echo off
-call run_local.bat
+call "%~dp0run_local.bat"
+exit /b %errorlevel%

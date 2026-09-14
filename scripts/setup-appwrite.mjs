@@ -20,11 +20,11 @@ function readEnv(path) {
   );
 }
 
-const frontend = readEnv(resolve(root, "frontend/.env"));
+const frontend = { ...readEnv(resolve(root, "frontend/.env")), ...readEnv(resolve(root, "frontend/.env.local")) };
 const privateEnv = readEnv(resolve(root, "scripts/.env"));
-const endpoint = frontend.VITE_APPWRITE_ENDPOINT;
-const projectId = frontend.VITE_APPWRITE_PROJECT_ID;
-const databaseId = frontend.VITE_APPWRITE_DATABASE_ID;
+const endpoint = frontend.NEXT_PUBLIC_APPWRITE_ENDPOINT || frontend.VITE_APPWRITE_ENDPOINT;
+const projectId = frontend.NEXT_PUBLIC_APPWRITE_PROJECT_ID || frontend.VITE_APPWRITE_PROJECT_ID;
+const databaseId = frontend.NEXT_PUBLIC_APPWRITE_DATABASE_ID || frontend.VITE_APPWRITE_DATABASE_ID;
 const key = process.env.APPWRITE_API_KEY || privateEnv.APPWRITE_API_KEY;
 
 if (!endpoint || !projectId || !databaseId || !key) {
@@ -44,7 +44,7 @@ const status = (value) => ({ key: "status", type: "enum", elements: [value], req
 
 const collections = [
   {
-    id: frontend.VITE_APPWRITE_TRIALS_COLLECTION_ID,
+    id: frontend.NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID || frontend.VITE_APPWRITE_TRIALS_COLLECTION_ID,
     name: "Trial bookings",
     fields: [
       string("id", 64), string("parentName", 80), string("studentName", 80),
@@ -55,7 +55,7 @@ const collections = [
     ],
   },
   {
-    id: frontend.VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID,
+    id: frontend.NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID || frontend.VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID,
     name: "Course registrations",
     fields: [
       string("id", 64), string("studentName", 80), string("parentName", 80),
@@ -64,7 +64,7 @@ const collections = [
     ],
   },
   {
-    id: frontend.VITE_APPWRITE_LEADS_COLLECTION_ID,
+    id: frontend.NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID || frontend.VITE_APPWRITE_LEADS_COLLECTION_ID,
     name: "Contact inquiries",
     fields: [
       string("id", 64), string("fullName", 80), email("email"),

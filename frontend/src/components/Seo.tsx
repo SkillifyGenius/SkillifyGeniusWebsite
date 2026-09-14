@@ -1,11 +1,4 @@
-import { useEffect } from "react";
-
-export function Seo({ title, description }: { title: string; description: string }) {
-  useEffect(() => {
-    document.title = title;
-    const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (meta) meta.content = description;
-  }, [title, description]);
-
+export function Seo(_props: { title: string; description: string }) {
+  // Route metadata is rendered by the Next.js App Router before hydration.
   return null;
 }
