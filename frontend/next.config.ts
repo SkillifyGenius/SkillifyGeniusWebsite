@@ -1,0 +1,17 @@
+import type { NextConfig } from "next";
+import path from "node:path";
+
+const nextConfig: NextConfig = {
+  output: process.env.NEXT_STANDALONE === "1" ? "standalone" : undefined,
+  outputFileTracingRoot: path.join(process.cwd(), ".."),
+  env: {
+    NEXT_PUBLIC_APPWRITE_ENDPOINT: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || process.env.VITE_APPWRITE_ENDPOINT || "https://api.attanjil.com/v1",
+    NEXT_PUBLIC_APPWRITE_PROJECT_ID: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || process.env.VITE_APPWRITE_PROJECT_ID || "6aa5f4880020ee2b7f5b",
+    NEXT_PUBLIC_APPWRITE_DATABASE_ID: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || process.env.VITE_APPWRITE_DATABASE_ID || "6aa5fbd8001e67a857e3",
+    NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID: process.env.NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID || process.env.VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID || "course_registrations",
+    NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID: process.env.NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID || process.env.VITE_APPWRITE_LEADS_COLLECTION_ID || "leads",
+    NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID: process.env.NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID || process.env.VITE_APPWRITE_TRIALS_COLLECTION_ID || "trial_bookings",
+  },
+};
+
+export default nextConfig;

@@ -1,9 +1,9 @@
 import { fallbackCourses, fallbackPosts } from "@/data/content";
 import type { BlogPost, Course, CourseRegistration, LeadInquiry, ParentReview, TrialBooking } from "@/types";
 
-const endpoint = (import.meta.env.VITE_APPWRITE_ENDPOINT || "https://api.attanjil.com/v1").replace(/\/+$/, "");
-const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID || "6aa5f4880020ee2b7f5b";
-const rawDb = import.meta.env.VITE_APPWRITE_DATABASE_ID;
+const endpoint = (process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "https://api.attanjil.com/v1").replace(/\/+$/, "");
+const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || "6aa5f4880020ee2b7f5b";
+const rawDb = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
 // Map the display name "skillify_genius_db" to the actual Appwrite database ID "6aa5fbd8001e67a857e3"
 const databaseId = (!rawDb || rawDb === "skillify_genius_db") ? "6aa5fbd8001e67a857e3" : rawDb;
 
@@ -52,9 +52,9 @@ export const api = {
   getReviews: async (): Promise<ParentReview[]> => [],
   getBlogPosts: async (): Promise<BlogPost[]> => fallbackPosts,
   submitRegistration: (payload: Omit<CourseRegistration, "id" | "status" | "createdAt">) =>
-    createDocument(import.meta.env.VITE_APPWRITE_REGISTRATIONS_COLLECTION_ID, { ...payload, id: newDocumentId(), status: "new" as const, createdAt: new Date().toISOString() }),
+    createDocument(process.env.NEXT_PUBLIC_APPWRITE_REGISTRATIONS_COLLECTION_ID || "course_registrations", { ...payload, id: newDocumentId(), status: "new" as const, createdAt: new Date().toISOString() }),
   submitLead: (payload: Omit<LeadInquiry, "id" | "status" | "createdAt">) =>
-    createDocument(import.meta.env.VITE_APPWRITE_LEADS_COLLECTION_ID, { ...payload, id: newDocumentId(), status: "new" as const, createdAt: new Date().toISOString() }),
+    createDocument(process.env.NEXT_PUBLIC_APPWRITE_LEADS_COLLECTION_ID || "leads", { ...payload, id: newDocumentId(), status: "new" as const, createdAt: new Date().toISOString() }),
   bookTrial: (payload: Omit<TrialBooking, "id" | "status" | "createdAt">) =>
-    createDocument(import.meta.env.VITE_APPWRITE_TRIALS_COLLECTION_ID, { ...payload, id: newDocumentId(), status: "pending" as const, createdAt: new Date().toISOString() }),
+    createDocument(process.env.NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID || "trial_bookings", { ...payload, id: newDocumentId(), status: "pending" as const, createdAt: new Date().toISOString() }),
 };

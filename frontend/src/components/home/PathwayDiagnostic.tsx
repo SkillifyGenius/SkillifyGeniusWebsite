@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ArrowRight,
   BrainCircuit,
@@ -275,7 +275,7 @@ export function PathwayDiagnostic() {
                   <span>Free assessment includes a tailored consultation based on these answers.</span>
                 </div>
                 <Button asChild size="lg" className="shadow-lg shadow-emerald-950/10">
-                  <Link to={`/trial?course=${recommendation.slug}`}>
+                  <Link href={`/trial?course=${recommendation.slug}`}>
                     Discuss this roadmap in free 45-min trial <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

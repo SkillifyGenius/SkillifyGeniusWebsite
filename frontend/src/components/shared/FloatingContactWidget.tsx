@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { CalendarCheck2, Mail, MessageCircle, Phone, Send, Sparkles, X } from "lucide-react";
 import { contact } from "@/lib/contact";
 
@@ -25,7 +25,7 @@ export function FloatingContactWidget() {
           </div>
 
           <Link
-            to="/trial"
+            href="/trial"
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 rounded-xl bg-emerald-50/80 p-2.5 text-xs font-bold text-emerald-950 transition hover:bg-emerald-100"
           >
@@ -39,7 +39,7 @@ export function FloatingContactWidget() {
           </Link>
 
           <Link
-            to="/contact"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 rounded-xl p-2.5 text-xs font-bold text-foreground transition hover:bg-slate-50"
           >

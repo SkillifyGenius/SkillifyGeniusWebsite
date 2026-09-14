@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BookOpen, Menu, Sparkles, X, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,14 +14,14 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-emerald-950/10 bg-[#f8f5ed]/95 backdrop-blur-xl transition-all">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         {/* Brand Logo */}
         <Link
-          to="/"
+          href="/"
           className="group flex items-center gap-3"
           onClick={() => {
             setOpen(false);
@@ -52,7 +53,7 @@ export function Navbar() {
             return (
               <Link
                 key={href}
-                to={href}
+                href={href}
                 className={`relative px-3.5 py-2 text-sm font-bold transition-all rounded-xl ${
                   isActive
                     ? "text-emerald-900 bg-emerald-100/60 font-black shadow-2xs"
@@ -72,7 +73,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="hidden md:block">
             <Button asChild size="default" className="shadow-md shadow-emerald-950/15 hover:shadow-lg transition-all">
-              <Link to="/trial" className="flex items-center gap-1.5">
+              <Link href="/trial" className="flex items-center gap-1.5">
                 <Sparkles className="h-3.5 w-3.5 text-amber-300" />
                 Book 45-Min Trial
               </Link>
@@ -99,7 +100,7 @@ export function Navbar() {
               return (
                 <Link
                   key={href}
-                  to={href}
+                  href={href}
                   onClick={() => setOpen(false)}
                   className={`flex items-center justify-between rounded-xl px-4 py-3 font-bold text-sm transition ${
                     isActive
@@ -116,7 +117,7 @@ export function Navbar() {
             })}
             <div className="pt-3">
               <Button asChild className="w-full justify-center shadow-md">
-                <Link to="/trial" onClick={() => setOpen(false)}>
+                <Link href="/trial" onClick={() => setOpen(false)}>
                   <Sparkles className="mr-2 h-4 w-4 text-amber-300" />
                   Book 45-Min Trial
                 </Link>

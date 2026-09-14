@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { BookOpen, Mail, MessageCircle, Phone, Send } from "lucide-react";
 import { contact } from "@/lib/contact";
 
@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link
-            to="/"
+            href="/"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="inline-flex items-center gap-3 font-display font-black text-xl"
           >
@@ -20,11 +20,13 @@ export function Footer() {
         <div>
           <p className="font-extrabold text-white">Explore</p>
           <div className="mt-4 grid gap-3 text-sm text-emerald-100/65">
-            <Link to="/courses" className="hover:text-white">Courses</Link>
-            <Link to="/trial" className="hover:text-white">Book 45-Min Trial</Link>
-            <Link to="/about" className="hover:text-white">About the Teacher</Link>
-            <Link to="/blog" className="hover:text-white">Blog & Articles</Link>
-            <Link to="/safeguarding" className="hover:text-white">Child Safeguarding</Link>
+            <Link href="/courses" className="hover:text-white">Courses</Link>
+            <Link href="/trial" className="hover:text-white">Book 45-Min Trial</Link>
+            <Link href="/about" className="hover:text-white">About the Teacher</Link>
+            <Link href="/blog" className="hover:text-white">Blog & Articles</Link>
+            <Link href="/safeguarding" className="hover:text-white">Child Safeguarding</Link>
+            <Link href="/mentorship" className="hover:text-white">Technology Mentorship</Link>
+            <Link href="/assessment" className="hover:text-white">Personal Roadmap</Link>
           </div>
         </div>
         <div>
@@ -35,7 +37,7 @@ export function Footer() {
             <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white"><MessageCircle className="h-4 w-4 shrink-0" /> WhatsApp</a>
             <a href={contact.telegramHref} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white"><Send className="h-4 w-4 shrink-0" /> Telegram</a>
           </div>
-          <div className="mt-5 flex flex-wrap gap-4 text-xs text-emerald-100/50"><Link to="/privacy">Privacy Policy</Link><Link to="/safeguarding">Safeguarding</Link><Link to="/terms">Terms of Service</Link></div>
+          <div className="mt-5 flex flex-wrap gap-4 text-xs text-emerald-100/50"><Link href="/privacy">Privacy Policy</Link><Link href="/safeguarding">Safeguarding</Link><Link href="/terms">Terms of Service</Link></div>
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-xs text-emerald-100/50">

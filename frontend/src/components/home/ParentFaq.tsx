@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, ChevronDown, HelpCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -124,7 +124,7 @@ export function ParentFaq() {
             </div>
           </div>
           <Button asChild className="w-full sm:w-auto">
-            <Link to="/trial">Book free 45-min assessment <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href="/trial">Book free 45-min assessment <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
       </div>
