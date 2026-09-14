@@ -8,6 +8,7 @@ Deploy the `frontend` directory to a Next.js-capable host such as Vercel, or run
 Root directory: frontend
 Framework: Next.js
 Build: npm run build
+Output directory: auto-detected (do not set dist)
 Environment: NEXT_PUBLIC_APPWRITE_ENDPOINT=https://api.attanjil.com/v1
 Environment: NEXT_PUBLIC_APPWRITE_PROJECT_ID=6aa5f4880020ee2b7f5b
 Environment: NEXT_PUBLIC_APPWRITE_DATABASE_ID=6aa5fbd8001e67a857e3
@@ -17,6 +18,8 @@ Environment: NEXT_PUBLIC_APPWRITE_TRIALS_COLLECTION_ID=trial_bookings
 ```
 
 Next.js handles routes and metadata directly. Set the production domain to `https://www.skillifygenius.com` or update `SITE_URL` in `frontend/src/lib/site-metadata.ts` if the canonical domain changes. `/courses` is preserved as a direct page.
+
+The `frontend/vercel.json` file selects the Next.js framework and resets any previous Vite `dist` output override to automatic detection. Keep the Vercel project Root Directory set to `frontend`. If a deployment still reports a missing `dist` folder, turn off the Output Directory override in Vercel Project Settings and redeploy the latest `main` commit.
 
 For a traditional Node.js host, install dependencies at the repository root, set the public Appwrite variables, run `npm run build`, then run `npm run start --workspace @skillify/frontend`. Use Node.js 20 or newer and forward port 3000 through the host's HTTPS reverse proxy. This app needs a Node.js runtime; copying static files to a static-only server is insufficient.
 
